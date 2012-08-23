@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'sqlite3'
 
+gem 'jquery-rails'
+
 group :assets do
   gem 'less-rails'
   gem 'coffee-rails'
@@ -19,6 +21,4 @@ end
 group :development, :test do
   gem 'rspec-rails'
 end
-
-gem 'jquery-rails'
 
