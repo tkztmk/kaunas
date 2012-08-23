@@ -1,0 +1,85 @@
+@import 'tartu/tartu.less'; 
+//@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
+@import url(http://fonts.googleapis.com/css?family=Averia+Serif+Libre);
+
+#newspaper {
+  .normal {
+    color: #000000; 
+    background-color: #dbdbd2; 
+  }
+  .line-number {
+    color: #666677; 
+    background-color: #cccfbf; 
+  }
+  .border-color {
+    border-color: #666677; 
+  }
+}
+
+html {
+  margin: 0; 
+  padding: 0; 
+}
+body {
+  margin: 0; 
+  padding: 0; 
+  #newspaper > .line-number; 
+  font-size: 18px; 
+}
+#content {
+  margin: 0px auto; 
+  padding: 0px; 
+  width: 720px; 
+  #newspaper > .normal; 
+}
+header .header-image{
+  background-image:
+  url(/gfx/header.jpg); 
+  width: 720px; 
+  height: 30px; 
+  padding: 210px 0px 0px 0px; 
+  color: #dddddd;
+  font-family: 'Averia Serif Libre', cursive; 
+  font-size: 12px; 
+  h1 {
+    a {
+      color: #dddddd; 
+      text-decoration: none; 
+    }
+    a:hover {
+      text-decoration: underline; 
+    }
+    margin: 1px; 
+    padding: 1px 24px 1px 24px; 
+    line-height: 1.2em; 
+  }
+}
+nav {
+  border-top: 1px solid; 
+  border-bottom: 1px solid; 
+  ul {
+    margin: 1px; 
+    padding: 1px; 
+    list-style: none; 
+    li {
+      margin: 1px; 
+      padding: 1px 24px 1px 24px; 
+      border-left: 2px solid; 
+      #newspaper > .border-color; 
+      display: inline; 
+      a {
+        color: @tartu-color238; 
+        text-decoration: none; 
+        font-size: 24px; 
+      }
+      a:hover {
+        text-decoration: underline; 
+      }
+    }
+    li:first-child {
+      border: 0; 
+    }
+  }
+}
+
+

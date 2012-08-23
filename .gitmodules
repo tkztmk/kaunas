@@ -1,0 +1,3 @@
+[submodule "app/assets/stylesheets/tartu"]
+	path = app/assets/stylesheets/tartu
+	url = https://github.com/tkztmk/tartu.git

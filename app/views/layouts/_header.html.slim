@@ -1,0 +1,10 @@
+header
+  .container
+    /= link_to 'sample app', '#', id: 'logo'
+    .header-image
+      h1 
+        = link_to full_title(@title), root_path
+    nav
+      ul 
+        li= link_to 'Home', root_path
+
