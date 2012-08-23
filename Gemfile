@@ -5,6 +5,7 @@ gem 'sqlite3'
 
 gem 'jquery-rails'
 gem 'rails_config'
+gem 'redcarpet'
 
 group :assets do
   gem 'less-rails'
