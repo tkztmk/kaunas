@@ -16,7 +16,7 @@ group :development do
   gem 'guard-livereload'
 end
 
-group :test do
+group :development, :test do
   gem 'rspec-rails'
 end
 
