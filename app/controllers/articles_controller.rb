@@ -13,11 +13,14 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    @article = Article.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @article }
+    @article = Article.find_by_identifier(params[:id])
+    if @article.nil? then
+      render file: "#{Rails.root}/public/404.html", status: '404 Not Found'
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @article }
+      end
     end
   end
 
@@ -34,7 +37,10 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-    @article = Article.find(params[:id])
+    @article = Article.find_by_identifier(params[:id])
+    if @article.nil? then 
+      render file: "#{Rails.root}/public/404.html", status: '404 Not Found'
+    end
   end
 
   # POST /articles
@@ -44,7 +50,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.html { redirect_to @article.identifier, notice: 'Article was successfully created.' }
         format.json { render json: @article, status: :created, location: @article }
       else
         format.html { render action: "new" }
@@ -56,11 +62,11 @@ class ArticlesController < ApplicationController
   # PUT /articles/1
   # PUT /articles/1.json
   def update
-    @article = Article.find(params[:id])
+    @article = Article.find_by_identifier(params[:id])
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to @article.identifier, notice: 'Article was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -72,7 +78,7 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
-    @article = Article.find(params[:id])
+    @article = Article.find_by_identifier(params[:id])
     @article.destroy
 
     respond_to do |format|

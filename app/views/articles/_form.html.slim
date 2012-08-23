@@ -7,21 +7,12 @@
           li = message
 
   .field
-    = f.label :document_title
-    = f.text_area :document_title
+    = f.label :identifier
+    = f.text_field :identifier
   .field
     = f.label :document
     = f.text_area :document
   .field
-    = f.label :tag
-    = f.text_area :tag
-  .field
-    = f.label :document_type
-    = f.text_area :document_type
-  .field
-    = f.label :document_updated_at
-    = f.datetime_select :document_updated_at
-  .field
-    = f.label :document_metadata
-    = f.text_area :document_metadata
+    = f.label :metadata
+    = f.text_area :metadata
   .actions = f.submit 'Save'

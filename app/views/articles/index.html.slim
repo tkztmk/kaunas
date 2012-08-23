@@ -1,29 +1,7 @@
-h1 Listing articles
+h1 Article List
 
-table
-  tr
-    th Document title
-    th Document
-    th Tag
-    th Document type
-    th Document updated at
-    th Document metadata
-    th
-    th
-    th
-
-  - @articles.each do |article|
-    tr
-      td = article.document_title
-      td = article.document
-      td = article.tag
-      td = article.document_type
-      td = article.document_updated_at
-      td = article.document_metadata
-      td = link_to 'Show', article
-      td = link_to 'Edit', edit_article_path(article)
-      td = link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
-
-br
+ul
+  -@articles.each do |article|
+    li= link_to "#{article.identifier} | #{JSON.load(article.metadata)['title']}", article_path(article.identifier)
 
 = link_to 'New Article', new_article_path

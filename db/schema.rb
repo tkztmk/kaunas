@@ -11,17 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120823204153) do
+ActiveRecord::Schema.define(:version => 20120823220028) do
 
   create_table "articles", :force => true do |t|
-    t.text     "document_title"
+    t.string   "identifier"
     t.text     "document"
-    t.text     "tag"
-    t.text     "document_type"
-    t.datetime "document_updated_at"
-    t.text     "document_metadata"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.text     "metadata"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

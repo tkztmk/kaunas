@@ -1,24 +1,11 @@
 p#notice = notice
 
-p
-  strong Document title:
-  = @article.document_title
-p
-  strong Document:
-  = @article.document
-p
-  strong Tag:
-  = @article.tag
-p
-  strong Document type:
-  = @article.document_type
-p
-  strong Document updated at:
-  = @article.document_updated_at
-p
-  strong Document metadata:
-  = @article.document_metadata
+h1= JSON.load(@article.metadata)['title']
+.markdown_document
+  pre= @article.document
+  - metadata = JSON.load(@article.metadata)
+pre= "title: #{metadata['title']}; \n last updated: #{Time.parse(metadata['updated_at']).strftime('%Y/%m/%d%H:%M')};\n tags #{metadata['tag']}; \n"
 
-= link_to 'Edit', edit_article_path(@article)
+= link_to 'Edit', edit_article_path(@article.identifier)
 '|
 = link_to 'Back', articles_path
