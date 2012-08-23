@@ -4,6 +4,7 @@ gem 'rails', '3.2.8'
 gem 'sqlite3'
 
 gem 'jquery-rails'
+gem 'rails_config'
 
 group :assets do
   gem 'less-rails'
