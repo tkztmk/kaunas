@@ -1,4 +1,5 @@
 require 'json'
+require 'redcarpet'
 class Article < ActiveRecord::Base
   attr_accessible :document, :metadata, :identifier
   after_initialize :set_default_params
@@ -14,5 +15,12 @@ class Article < ActiveRecord::Base
       tag: '#tag_of_this_article #multiple_tags_are_allowed'
     )
     self.document = self.document || "# #{JSON.load(self.metadata)['title']}"
+  end
+  def to_param
+    self.identifier
+  end
+  Redcarpet::Markdown.new(Redcarpet::Render::XHTML.new(filter_html: true))
+  def document_as_html
+    Redcarpet::Markdown.new(Redcarpet::Render::XHTML.new(filter_html: true)).render(self.document)
   end
 end

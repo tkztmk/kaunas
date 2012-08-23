@@ -1,11 +1,10 @@
 p#notice = notice
 
-h1= JSON.load(@article.metadata)['title']
 .markdown_document
-  pre= @article.document
+  #{{@article.document_as_html}}
   - metadata = JSON.load(@article.metadata)
 pre= "title: #{metadata['title']}; \n last updated: #{Time.parse(metadata['updated_at']).strftime('%Y/%m/%d%H:%M')};\n tags #{metadata['tag']}; \n"
 
-= link_to 'Edit', edit_article_path(@article.identifier)
+= link_to 'Edit', edit_article_path(@article)
 '|
 = link_to 'Back', articles_path
