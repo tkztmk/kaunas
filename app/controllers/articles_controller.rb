@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @title = 'Article List'
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +15,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find_by_identifier(params[:id])
+    @title = @article.identifier
     if @article.nil? then
       render file: "#{Rails.root}/public/404.html", status: '404 Not Found'
     else
@@ -27,6 +29,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @title = 'Create New Article'
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +40,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find_by_identifier(params[:id])
+    @title = "Edit Article #{@article.identifier}"
     if @article.nil? then 
       render file: "#{Rails.root}/public/404.html", status: '404 Not Found'
     end
