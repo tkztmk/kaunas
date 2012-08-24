@@ -9,11 +9,9 @@ gem 'redcarpet'
 
 group :production do
   gem 'passenger'
-  gem 'bson_ext'
-  gem 'mongoid'
 end
 
-group :assets do
+group :production, :assets do
   gem 'less-rails'
   gem 'coffee-rails'
   gem 'slim-rails'
