@@ -1,4 +1,9 @@
 site_title: 'sera nimis uita est crastina: uiue hodie!' 
 site_contact: 'mailto: tkztmk@outlook.com'
 site_author: 'Takezoe Tomoaki'
+admin_username: 'tkztmk'
+admin_password_sha512: '58ac0a532ecf5360b0978c047aa16f7b5941b3cd9fecdba2e12251d2477807225856fdf3a51e98636101495810d065a504b5125c7dd12cbb76f2fcb67d18b66d' 
+# echo -n '<admin_password_salt><password>' | sha512sum # => <admin_password_sha512> -
+admin_password_salt: '8b'
+
 
