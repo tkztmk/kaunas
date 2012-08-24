@@ -3,8 +3,10 @@ header
     /= link_to 'sample app', '#', id: 'logo'
     .header-image
       h1 
-        = link_to full_title(@title), root_path
+        = link_to site_title, root_path
     nav
       ul 
         li= link_to 'Home', root_path
+        li= link_to 'Article List', article_path('')
+        li= link_to 'Profile', article_path('profile')
 
