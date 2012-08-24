@@ -7,6 +7,12 @@ gem 'jquery-rails'
 gem 'rails_config'
 gem 'redcarpet'
 
+group :production do
+  gem 'passenger'
+  gem 'bson_ext'
+  gem 'mongoid'
+end
+
 group :assets do
   gem 'less-rails'
   gem 'coffee-rails'
