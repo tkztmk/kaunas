@@ -7,6 +7,8 @@ gem 'jquery-rails'
 gem 'rails_config'
 gem 'redcarpet'
 
+gem 'yaml_db'
+
 group :production do
   gem 'passenger'
   gem 'mysql2'

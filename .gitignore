@@ -21,3 +21,6 @@ config/environments/*.local.yml
 # compiled assets
 public/assets/*
 
+# dumped data by yaml_db
+db/data.yml
+
