@@ -9,6 +9,7 @@ gem 'redcarpet'
 
 group :production do
   gem 'passenger'
+  gem 'mysql2'
 end
 
 group :production, :assets do

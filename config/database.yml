@@ -18,8 +18,19 @@ test:
   pool: 5
   timeout: 5000
 
+<%
+require 'json'
+database_config = JSON.parse(File.read("#{ENV['HOME']}/.rails.conf.json"))
+%>
+
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql2 
+  encoding: utf8 
+  reconnect: false 
+  database: kaunas
   pool: 5
-  timeout: 5000
+  host: <%= database_config['mysql_host'] %>
+  port: <%= database_config['mysql_port'] %>
+  username: <%= database_config['mysql_login'] %>
+  password: <%= database_config['mysql_password'] %>
+
