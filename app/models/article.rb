@@ -1,11 +1,19 @@
 require 'json'
 require 'redcarpet'
+require 'nkf'
+
 class Article < ActiveRecord::Base
   attr_accessible :document, :metadata, :identifier
   after_initialize :set_default_params
   validates :identifier, presence: true
   validates_format_of :identifier, with: /^[0-9a-zA-Z_\-\.]+$/
   validates_uniqueness_of :identifier
+  def document=(document)
+    self[:document] = document && NKF.nkf('-dm0xWw', document)
+  end
+  def metadata=(metadata)
+    self[:metadata] = metadata && NKF.nkf('-dm0xWw', metadata)
+  end
   def set_default_params
     self.identifier = self.identifier || 
       'the_identifier_of_this_article'
