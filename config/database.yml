@@ -20,7 +20,7 @@ test:
 
 <%
 require 'json'
-database_config = JSON.parse(File.read("#{ENV['HOME']}/.rails.conf.json"))
+database_config = JSON.parse(File.read(Settings.configuration_path))
 %>
 
 production:
