@@ -1,12 +1,14 @@
 require 'digest/sha2'
+require 'json'
 
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  @@settings = JSON.parse(File.read("#{ENV['HOME']}/.rails.conf.json"))
   def authenticate
     authenticate_or_request_with_http_basic('Enter Password') do |u, p|
-      salt = Settings.admin_password_salt
-      sha512 = Settings.admin_password_sha512
-      u == 'admin' && Digest::SHA512.hexdigest(salt + p) == sha512
+      salt = @@settings['admin_password_salt']
+      sha512 = @@settings['admin_password_hash']
+      u == @@settings['admin_login'] && Digest::SHA512.hexdigest(salt + p) == sha512
     end
   end
   before_filter :authenticate
