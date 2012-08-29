@@ -24,3 +24,6 @@ public/assets/*
 # dumped data by yaml_db
 db/data.yml
 
+# passenger-standalone
+/passenger-standalone
+
