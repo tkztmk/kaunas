@@ -10,6 +10,7 @@ gem 'redcarpet'
 gem 'therubyracer', platforms: :ruby
 gem 'therubyrhino', platforms: :jruby
 
+gem 'slim-rails'
 gem 'yaml_db'
 
 group :production do
@@ -20,7 +21,6 @@ end
 group :assets do
   gem 'less-rails'
   gem 'coffee-rails'
-  gem 'slim-rails'
   gem 'uglifier'
   gem 'google-code-prettify-rails'
 end
