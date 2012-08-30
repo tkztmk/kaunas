@@ -1,13 +1,17 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
+<%
+require 'json'
+database_config = JSON.parse(File.read(Settings.configuration_path))
+%>
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
+  adapter: mysql2 
+  encoding: utf8 
+  reconnect: false 
+  database: kaunas
   pool: 5
-  timeout: 5000
+  host: <%= database_config['mysql_host'] %>
+  port: <%= database_config['mysql_port'] %>
+  username: <%= database_config['mysql_login'] %>
+  password: <%= database_config['mysql_password'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -17,11 +21,6 @@ test:
   database: db/test.sqlite3
   pool: 5
   timeout: 5000
-
-<%
-require 'json'
-database_config = JSON.parse(File.read(Settings.configuration_path))
-%>
 
 production:
   adapter: mysql2 
