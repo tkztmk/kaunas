@@ -1,6 +1,7 @@
 @import 'tartu/tartu.less'; 
 //@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
 @import url(http://fonts.googleapis.com/css?family=Averia+Serif+Libre);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata); 
 
 #newspaper {
   .normal {
@@ -105,8 +106,75 @@ nav {
   margin: 0; 
   padding: 1px 12px 1px 12px; 
   line-height: 1.2em; 
+  h1 {
+    font-size: 32px; 
+    line-height: 36px; 
+  }
   h2 {
-    padding: 1px; 
+    font-size: 28px; 
+    light-height: 32px; 
     border-bottom: 1px solid; 
   }
+  h3 {
+    font-size: 24px; 
+    line-height: 28px; 
+  }
+  h4 {
+    font-size: 20px; 
+    line-height: 24px; 
+  }
+  h5 {
+    font-size: 16px; 
+    line-height: 20px; 
+  }
+  h6 {
+    font-size: 12px; 
+    line-height: 16px; 
+  }
+  pre {
+    overflow: auto; 
+    white-space: pre-wrap; 
+    background-color: #f0f0f0; 
+    color: #404850; 
+      margin: 24px; 
+      padding: 0; 
+    code {
+      font-family: 'Inconsolata', sans-serif;
+      //background-color: @tartu-color153; 
+      .str { // string
+        color: #4070a0; 
+      }
+      .kwd { // keyword
+        color: #007020; 
+      }
+      .com { // comment
+        color: #a0b0c0; 
+      }
+      .typ { // type
+        color: #e5a00d; 
+      }
+      .lit { // literal
+        color: #70a040; 
+      }
+      .pun { // punctuation
+        color: #408010; 
+      }
+      .pln { // plaintext
+      }
+      .tag { // html/xml tag
+        color: #007020; 
+      }
+      .atn { // html/xml attribute name
+        color: #5b3674; 
+      }
+      .atv { // html/xml attribute value
+        color: #e5a00d; 
+      }
+      .dec { // decimal 
+        color: #40a070; 
+      }
+      //color: @tartu-color255; 
+    }
+  }
 }
+

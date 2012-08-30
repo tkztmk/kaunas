@@ -7,6 +7,9 @@ gem 'jquery-rails'
 gem 'rails_config'
 gem 'redcarpet'
 
+gem 'therubyracer', platforms: :ruby
+gem 'therubyrhino', platforms: :jruby
+
 gem 'yaml_db'
 
 group :production do
@@ -14,13 +17,12 @@ group :production do
   gem 'mysql2'
 end
 
-group :production, :assets do
+group :assets do
   gem 'less-rails'
   gem 'coffee-rails'
   gem 'slim-rails'
-  gem 'therubyracer', platforms: :ruby
-  gem 'therubyrhino', platforms: :jruby
   gem 'uglifier'
+  gem 'google-code-prettify-rails'
 end
 
 group :development do
