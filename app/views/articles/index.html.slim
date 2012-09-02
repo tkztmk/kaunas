@@ -4,4 +4,3 @@ ul
   -@articles.each do |article|
     li= link_to "#{article.identifier} | #{JSON.load(article.metadata)['title']}", article_path(article)
 
-= link_to 'New Article', new_article_path

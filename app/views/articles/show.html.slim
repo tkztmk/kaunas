@@ -4,9 +4,3 @@ p#notice = notice
   #{{@article.document_as_html}}
   - metadata = JSON.load(@article.metadata)
 
-ul
-  li= link_to 'Edit', edit_article_path(@article)
-  li= link_to 'Back', articles_path
-= form_tag(article_path(@article), method: 'delete') do 
-  = submit_tag("Destroy")
-
