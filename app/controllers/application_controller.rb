@@ -11,5 +11,5 @@ class ApplicationController < ActionController::Base
       u == @@settings['admin_login'] && Digest::SHA512.hexdigest(salt + p) == sha512
     end
   end
-  before_filter :authenticate
+  #before_filter :authenticate
 end
