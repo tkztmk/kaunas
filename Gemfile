@@ -13,12 +13,15 @@ gem 'therubyrhino', platforms: :jruby
 gem 'slim-rails'
 gem 'yaml_db'
 
+gem 'activeadmin'
+
 group :production do
   gem 'passenger'
   gem 'mysql2'
 end
 
 group :assets do
+  gem 'sass-rails'
   gem 'less-rails'
   gem 'coffee-rails'
   gem 'uglifier'
