@@ -1,6 +1,6 @@
 module ApplicationHelper
   def default_siteinfo
-    Siteinfo.find_by_identifier('default')
+    Siteinfo.find_by_identifier('default') || Siteinfo.new
   end
   def site_title
     default_siteinfo.title
