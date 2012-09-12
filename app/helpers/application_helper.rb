@@ -1,12 +1,15 @@
 module ApplicationHelper
+  def default_siteinfo
+    Siteinfo.find_by_identifier('default')
+  end
   def site_title
-    Settings.site_title
+    default_siteinfo.title
   end
   def site_contact
-    Settings.site_contact
+    default_siteinfo.contact
   end
   def site_author
-    Settings.site_author
+    default_siteinfo.author
   end
   def full_title(title)
     title ? "#{title} | #{site_title}" : site_title
